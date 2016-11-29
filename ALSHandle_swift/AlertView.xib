@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AlertView" customModule="ALSHandle_swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="106"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="close to the device．．．" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCo-xT-WNf" customClass="CUSFlashLabel">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="6X7-le-wVy"/>
+                        <constraint firstAttribute="width" constant="219" id="i3e-Lu-ueu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <color key="textColor" red="0.21373003721237183" green="0.78811043500900269" blue="0.98219448328018188" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not_connected" translatesAutoresizingMaskIntoConstraints="NO" id="hAZ-Sh-lmh">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="106" id="7ub-lI-DVR"/>
+                        <constraint firstAttribute="width" constant="338" id="mTr-jX-PXz"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gantanhao" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-Na-j5E">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="5" id="RYN-YJ-Fde"/>
+                        <constraint firstAttribute="height" constant="20" id="kIh-XD-uoj"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="CQI-Na-j5E" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="44" id="D82-qx-SVR"/>
+                <constraint firstItem="cCo-xT-WNf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="VAU-9Q-gpH"/>
+                <constraint firstItem="CQI-Na-j5E" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="54" id="c0b-4B-oUv"/>
+                <constraint firstItem="hAZ-Sh-lmh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hFK-52-s07"/>
+                <constraint firstItem="hAZ-Sh-lmh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kCq-pz-wyL"/>
+                <constraint firstItem="cCo-xT-WNf" firstAttribute="leading" secondItem="CQI-Na-j5E" secondAttribute="trailing" constant="60" id="kgP-eB-puG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="cCo-xT-WNf" id="NFp-qx-Jsh"/>
+                <outlet property="tip" destination="CQI-Na-j5E" id="Mrs-Cg-fgc"/>
+            </connections>
+            <point key="canvasLocation" x="75" y="-235"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="gantanhao" width="9" height="48"/>
+        <image name="not_connected" width="557" height="180"/>
+    </resources>
+</document>

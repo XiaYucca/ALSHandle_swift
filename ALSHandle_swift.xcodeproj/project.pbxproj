@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C127DB711DB8C5C7000FB0B6 /* CUSFlashLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C127DB6F1DB8C5C7000FB0B6 /* CUSFlashLabel.m */; };
+		C127DB731DB8CF95000FB0B6 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C127DB721DB8CF95000FB0B6 /* AlertView.xib */; };
+		C1359DE71DBEF47A00F5452C /* SetItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1359DE61DBEF47A00F5452C /* SetItem.xib */; };
+		C14B32061DB5F9DB006BC62D /* XYSerialManage.m in Sources */ = {isa = PBXBuildFile; fileRef = C14B32051DB5F9DB006BC62D /* XYSerialManage.m */; };
+		C14B32091DB5F9E9006BC62D /* SerialGATT.m in Sources */ = {isa = PBXBuildFile; fileRef = C14B32081DB5F9E9006BC62D /* SerialGATT.m */; };
+		C14B320E1DB5FB44006BC62D /* NSData+SubData.m in Sources */ = {isa = PBXBuildFile; fileRef = C14B320B1DB5FB44006BC62D /* NSData+SubData.m */; };
+		C14B320F1DB5FB44006BC62D /* NSString+FindString.m in Sources */ = {isa = PBXBuildFile; fileRef = C14B320D1DB5FB44006BC62D /* NSString+FindString.m */; };
 		C173E90B1DB45DF800AA413B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173E90A1DB45DF800AA413B /* AppDelegate.swift */; };
 		C173E90D1DB45DF800AA413B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173E90C1DB45DF800AA413B /* ViewController.swift */; };
 		C173E9101DB45DF800AA413B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C173E90E1DB45DF800AA413B /* Main.storyboard */; };
-		C173E9121DB45DF800AA413B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C173E9111DB45DF800AA413B /* Assets.xcassets */; };
 		C173E9151DB45DF800AA413B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C173E9131DB45DF800AA413B /* LaunchScreen.storyboard */; };
 		C173E9201DB45DF800AA413B /* ALSHandle_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173E91F1DB45DF800AA413B /* ALSHandle_swiftTests.swift */; };
 		C173E92B1DB45DF800AA413B /* ALSHandle_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C173E92A1DB45DF800AA413B /* ALSHandle_swiftUITests.swift */; };
+		C174D8601DC82F220086BD96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C174D85F1DC82F220086BD96 /* Images.xcassets */; };
+		C174D8771DC837F50086BD96 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C174D8761DC837F50086BD96 /* LoadingViewController.swift */; };
+		C1765A071DB8AC4900D343E2 /* SteeringWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1765A061DB8AC4900D343E2 /* SteeringWheel.m */; };
+		C1765A0A1DB8AD0400D343E2 /* XYDirectionCalculate.c in Sources */ = {isa = PBXBuildFile; fileRef = C1765A081DB8AD0400D343E2 /* XYDirectionCalculate.c */; };
+		C17A237C1DBD99820055ADBC /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A237B1DBD99820055ADBC /* ConnectViewController.swift */; };
+		C17A237E1DBDBBEB0055ADBC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A237D1DBDBBEB0055ADBC /* AlertView.swift */; };
+		C17A23801DBDF0030055ADBC /* SetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A237F1DBDF0030055ADBC /* SetingViewController.swift */; };
+		C1A0BD5E1DC6EDCC001581FF /* UIImage+data.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A0BD5D1DC6EDCC001581FF /* UIImage+data.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +48,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C127DB6F1DB8C5C7000FB0B6 /* CUSFlashLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUSFlashLabel.m; sourceTree = "<group>"; };
+		C127DB701DB8C5C7000FB0B6 /* CUSFlashLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUSFlashLabel.h; sourceTree = "<group>"; };
+		C127DB721DB8CF95000FB0B6 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		C1359DE61DBEF47A00F5452C /* SetItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SetItem.xib; path = ../SetItem.xib; sourceTree = "<group>"; };
+		C14B32031DB5F80D006BC62D /* Building-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Building-Header.h"; sourceTree = "<group>"; };
+		C14B32041DB5F9DB006BC62D /* XYSerialManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYSerialManage.h; sourceTree = "<group>"; };
+		C14B32051DB5F9DB006BC62D /* XYSerialManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYSerialManage.m; sourceTree = "<group>"; };
+		C14B32071DB5F9E9006BC62D /* SerialGATT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialGATT.h; sourceTree = "<group>"; };
+		C14B32081DB5F9E9006BC62D /* SerialGATT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialGATT.m; sourceTree = "<group>"; };
+		C14B320A1DB5FB44006BC62D /* NSData+SubData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+SubData.h"; sourceTree = "<group>"; };
+		C14B320B1DB5FB44006BC62D /* NSData+SubData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+SubData.m"; sourceTree = "<group>"; };
+		C14B320C1DB5FB44006BC62D /* NSString+FindString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FindString.h"; sourceTree = "<group>"; };
+		C14B320D1DB5FB44006BC62D /* NSString+FindString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FindString.m"; sourceTree = "<group>"; };
 		C173E9071DB45DF700AA413B /* ALSHandle_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALSHandle_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C173E90A1DB45DF800AA413B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C173E90C1DB45DF800AA413B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C173E90F1DB45DF800AA413B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C173E9111DB45DF800AA413B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C173E9141DB45DF800AA413B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C173E9161DB45DF800AA413B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C173E91B1DB45DF800AA413B /* ALSHandle_swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALSHandle_swiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +73,17 @@
 		C173E9261DB45DF800AA413B /* ALSHandle_swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ALSHandle_swiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C173E92A1DB45DF800AA413B /* ALSHandle_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSHandle_swiftUITests.swift; sourceTree = "<group>"; };
 		C173E92C1DB45DF800AA413B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C174D85F1DC82F220086BD96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C174D8761DC837F50086BD96 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C1765A051DB8AC4900D343E2 /* SteeringWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteeringWheel.h; sourceTree = "<group>"; };
+		C1765A061DB8AC4900D343E2 /* SteeringWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SteeringWheel.m; sourceTree = "<group>"; };
+		C1765A081DB8AD0400D343E2 /* XYDirectionCalculate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XYDirectionCalculate.c; sourceTree = "<group>"; };
+		C1765A091DB8AD0400D343E2 /* XYDirectionCalculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYDirectionCalculate.h; sourceTree = "<group>"; };
+		C17A237B1DBD99820055ADBC /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
+		C17A237D1DBDBBEB0055ADBC /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		C17A237F1DBDF0030055ADBC /* SetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetingViewController.swift; sourceTree = "<group>"; };
+		C1A0BD5C1DC6EDCC001581FF /* UIImage+data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+data.h"; sourceTree = "<group>"; };
+		C1A0BD5D1DC6EDCC001581FF /* UIImage+data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+data.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +111,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C14B32101DB5FB48006BC62D /* SerialManager */ = {
+			isa = PBXGroup;
+			children = (
+				C127DB6F1DB8C5C7000FB0B6 /* CUSFlashLabel.m */,
+				C127DB701DB8C5C7000FB0B6 /* CUSFlashLabel.h */,
+				C1765A081DB8AD0400D343E2 /* XYDirectionCalculate.c */,
+				C1765A091DB8AD0400D343E2 /* XYDirectionCalculate.h */,
+				C1765A051DB8AC4900D343E2 /* SteeringWheel.h */,
+				C1765A061DB8AC4900D343E2 /* SteeringWheel.m */,
+				C14B320A1DB5FB44006BC62D /* NSData+SubData.h */,
+				C14B320B1DB5FB44006BC62D /* NSData+SubData.m */,
+				C1A0BD5C1DC6EDCC001581FF /* UIImage+data.h */,
+				C1A0BD5D1DC6EDCC001581FF /* UIImage+data.m */,
+				C14B320C1DB5FB44006BC62D /* NSString+FindString.h */,
+				C14B320D1DB5FB44006BC62D /* NSString+FindString.m */,
+				C14B32071DB5F9E9006BC62D /* SerialGATT.h */,
+				C14B32081DB5F9E9006BC62D /* SerialGATT.m */,
+				C14B32041DB5F9DB006BC62D /* XYSerialManage.h */,
+				C14B32051DB5F9DB006BC62D /* XYSerialManage.m */,
+			);
+			name = SerialManager;
+			sourceTree = "<group>";
+		};
 		C173E8FE1DB45DF700AA413B = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +157,20 @@
 		C173E9091DB45DF700AA413B /* ALSHandle_swift */ = {
 			isa = PBXGroup;
 			children = (
+				C14B32101DB5FB48006BC62D /* SerialManager */,
 				C173E90A1DB45DF800AA413B /* AppDelegate.swift */,
+				C174D8761DC837F50086BD96 /* LoadingViewController.swift */,
 				C173E90C1DB45DF800AA413B /* ViewController.swift */,
+				C17A237B1DBD99820055ADBC /* ConnectViewController.swift */,
+				C14B32031DB5F80D006BC62D /* Building-Header.h */,
+				C17A237F1DBDF0030055ADBC /* SetingViewController.swift */,
 				C173E90E1DB45DF800AA413B /* Main.storyboard */,
-				C173E9111DB45DF800AA413B /* Assets.xcassets */,
+				C127DB721DB8CF95000FB0B6 /* AlertView.xib */,
+				C17A237D1DBDBBEB0055ADBC /* AlertView.swift */,
+				C1359DE61DBEF47A00F5452C /* SetItem.xib */,
 				C173E9131DB45DF800AA413B /* LaunchScreen.storyboard */,
 				C173E9161DB45DF800AA413B /* Info.plist */,
+				C174D85F1DC82F220086BD96 /* Images.xcassets */,
 			);
 			path = ALSHandle_swift;
 			sourceTree = "<group>";
@@ -194,7 +262,7 @@
 					C173E9061DB45DF700AA413B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7QBZV3YGDE;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					C173E91A1DB45DF800AA413B = {
 						CreatedOnToolsVersion = 8.0;
@@ -235,8 +303,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1359DE71DBEF47A00F5452C /* SetItem.xib in Resources */,
 				C173E9151DB45DF800AA413B /* LaunchScreen.storyboard in Resources */,
-				C173E9121DB45DF800AA413B /* Assets.xcassets in Resources */,
+				C174D8601DC82F220086BD96 /* Images.xcassets in Resources */,
+				C127DB731DB8CF95000FB0B6 /* AlertView.xib in Resources */,
 				C173E9101DB45DF800AA413B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +332,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1765A071DB8AC4900D343E2 /* SteeringWheel.m in Sources */,
+				C14B32061DB5F9DB006BC62D /* XYSerialManage.m in Sources */,
+				C17A23801DBDF0030055ADBC /* SetingViewController.swift in Sources */,
 				C173E90D1DB45DF800AA413B /* ViewController.swift in Sources */,
+				C17A237E1DBDBBEB0055ADBC /* AlertView.swift in Sources */,
+				C1A0BD5E1DC6EDCC001581FF /* UIImage+data.m in Sources */,
+				C14B320E1DB5FB44006BC62D /* NSData+SubData.m in Sources */,
+				C174D8771DC837F50086BD96 /* LoadingViewController.swift in Sources */,
 				C173E90B1DB45DF800AA413B /* AppDelegate.swift in Sources */,
+				C17A237C1DBD99820055ADBC /* ConnectViewController.swift in Sources */,
+				C14B32091DB5F9E9006BC62D /* SerialGATT.m in Sources */,
+				C14B320F1DB5FB44006BC62D /* NSString+FindString.m in Sources */,
+				C1765A0A1DB8AD0400D343E2 /* XYDirectionCalculate.c in Sources */,
+				C127DB711DB8C5C7000FB0B6 /* CUSFlashLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +421,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -358,7 +441,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -388,7 +471,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -401,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -413,12 +497,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				INFOPLIST_FILE = ALSHandle_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alsrobort.www.ALSHandle-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alsrobort.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ae05c4c2-76cc-46b2-a0f0-4744e946f2ee";
+				PROVISIONING_PROFILE_SPECIFIER = ALSHandlePorfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "ALSHandle_swift/Building-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -426,12 +517,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				INFOPLIST_FILE = ALSHandle_swift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alsrobort.www.ALSHandle-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alsrobort.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ae05c4c2-76cc-46b2-a0f0-4744e946f2ee";
+				PROVISIONING_PROFILE_SPECIFIER = ALSHandlePorfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "ALSHandle_swift/Building-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -512,6 +610,7 @@
 				C173E9311DB45DF800AA413B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C173E9321DB45DF800AA413B /* Build configuration list for PBXNativeTarget "ALSHandle_swiftTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +619,7 @@
 				C173E9341DB45DF800AA413B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C173E9351DB45DF800AA413B /* Build configuration list for PBXNativeTarget "ALSHandle_swiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +628,7 @@
 				C173E9371DB45DF800AA413B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
