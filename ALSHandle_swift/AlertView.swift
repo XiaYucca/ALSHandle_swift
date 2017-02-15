@@ -31,6 +31,7 @@ class AlertView: UIView {
             
             return;
             
+            
         }
         self.contentLabel.spotlightColor = #colorLiteral(red: 0.8235965371, green: 0.8545945883, blue: 0.9209875464, alpha: 1)
         self.contentLabel.contentMode = UIViewContentMode.center;

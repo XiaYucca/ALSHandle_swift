@@ -9,11 +9,23 @@
 import UIKit
 
 //let serialManager :XYSerialManage? = nil;
+
+enum opentionType {
+    case touch
+    case gravity
+    case voice
+    case downRight
+};
+
 var isBlueToothConnect:Bool = false ;
 
 var serialManager :XYSerialManage! = XYSerialManage();
 
 var optionData :OptionData? ;
+
+var selectOpentionType:opentionType! = opentionType.touch;
+
+//var motion = XYMotionManager.share();
 
 
 class ViewController: UIViewController {
@@ -53,6 +65,8 @@ class ViewController: UIViewController {
         
         print("++++++++++++++++++++++++viewdid load")
         
+       // motionTest();
+        
         if(optionData == nil){
             optionData = optionFromDocument()
         }
@@ -88,7 +102,9 @@ class ViewController: UIViewController {
         self.rotationAnimation(view: AnimateBg)
         
         self.wheelV.bgImage = UIImage(named:"yaogan_bac");
-        //self.wheelV.btnImage = UIImage(named:"drogBtn");
+        
+//        self.wheelV.btnImage = UIImage(named:"drogBtn");
+//        
         self.wheelV.btnDrgImage = UIImage(named:"drogBtn");
         
         self.wheelV.didDidDrag { (drag) in
@@ -143,6 +159,10 @@ class ViewController: UIViewController {
         }else{
             self.blueTouchStuts.isSelected = false;
         }
+        
+        
+
+    //    var p =  processImage(filePath: "/Users/rainpoll/Desktop/小奥appUI")
     }
 
     override func didReceiveMemoryWarning() {
@@ -155,18 +175,23 @@ class ViewController: UIViewController {
         let anim = CABasicAnimation(keyPath:"transform.rotation");
         anim.toValue = M_PI;
         anim.duration = 2;
-        anim.repeatCount = 100;
+        anim.repeatCount = 10000;
         anim.isCumulative = true;
         anim.isRemovedOnCompletion = false;
         
+        view.layer.anchorPoint = CGPoint.init(x: 0.4, y: 0.6)
+        
+        
         view.layer.add(anim, forKey: nil);
     }
+    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toConnectId"{
             print(segue.destination)
         }
     }
-    
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
        
         if identifier == "toConnectId" {
@@ -180,7 +205,6 @@ class ViewController: UIViewController {
         }
     }
 }
-
 
 
 

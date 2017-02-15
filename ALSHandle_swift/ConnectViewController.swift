@@ -10,6 +10,7 @@ import Foundation
 
 
 
+
 class ConnectViewController: ViewController {
     @IBOutlet weak var leftConstraints: NSLayoutConstraint!
     @IBOutlet weak var tipsLabel: CUSFlashLabel!
@@ -120,7 +121,7 @@ class ConnectViewController: ViewController {
         }
         
         
-        
+             
         
         //_timer.invalidate()
     }

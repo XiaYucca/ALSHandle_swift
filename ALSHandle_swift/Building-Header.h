@@ -15,6 +15,7 @@
 #import "CUSFlashLabel.h"
 
 #import "UIImage+data.h"
+#import "XYMotionManager.h"
 
 #endif /* Building_Header_h */
 

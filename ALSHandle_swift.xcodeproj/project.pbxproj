@@ -27,6 +27,10 @@
 		C17A237C1DBD99820055ADBC /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A237B1DBD99820055ADBC /* ConnectViewController.swift */; };
 		C17A237E1DBDBBEB0055ADBC /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A237D1DBDBBEB0055ADBC /* AlertView.swift */; };
 		C17A23801DBDF0030055ADBC /* SetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A237F1DBDF0030055ADBC /* SetingViewController.swift */; };
+		C18EA6691E11F8E7001CB741 /* XYMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C18EA6681E11F8E7001CB741 /* XYMotionManager.m */; };
+		C19C26841E53F121004D0CF8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19C26831E53F121004D0CF8 /* CoreGraphics.framework */; };
+		C19C268D1E5460BC004D0CF8 /* PhysicsAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C19C268C1E5460BC004D0CF8 /* PhysicsAnimationView.m */; };
+		C19D93A31E1B886600E76508 /* processImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19D93A21E1B886500E76508 /* processImage.swift */; };
 		C1A0BD5E1DC6EDCC001581FF /* UIImage+data.m in Sources */ = {isa = PBXBuildFile; fileRef = C1A0BD5D1DC6EDCC001581FF /* UIImage+data.m */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +86,12 @@
 		C17A237B1DBD99820055ADBC /* ConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		C17A237D1DBDBBEB0055ADBC /* AlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		C17A237F1DBDF0030055ADBC /* SetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetingViewController.swift; sourceTree = "<group>"; };
+		C18EA6671E11F8E7001CB741 /* XYMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYMotionManager.h; sourceTree = "<group>"; };
+		C18EA6681E11F8E7001CB741 /* XYMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMotionManager.m; sourceTree = "<group>"; };
+		C19C26831E53F121004D0CF8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C19C268B1E5460BC004D0CF8 /* PhysicsAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicsAnimationView.h; sourceTree = "<group>"; };
+		C19C268C1E5460BC004D0CF8 /* PhysicsAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicsAnimationView.m; sourceTree = "<group>"; };
+		C19D93A21E1B886500E76508 /* processImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = processImage.swift; sourceTree = "<group>"; };
 		C1A0BD5C1DC6EDCC001581FF /* UIImage+data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+data.h"; sourceTree = "<group>"; };
 		C1A0BD5D1DC6EDCC001581FF /* UIImage+data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+data.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C19C26841E53F121004D0CF8 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +125,8 @@
 		C14B32101DB5FB48006BC62D /* SerialManager */ = {
 			isa = PBXGroup;
 			children = (
+				C19C268B1E5460BC004D0CF8 /* PhysicsAnimationView.h */,
+				C19C268C1E5460BC004D0CF8 /* PhysicsAnimationView.m */,
 				C127DB6F1DB8C5C7000FB0B6 /* CUSFlashLabel.m */,
 				C127DB701DB8C5C7000FB0B6 /* CUSFlashLabel.h */,
 				C1765A081DB8AD0400D343E2 /* XYDirectionCalculate.c */,
@@ -130,6 +143,8 @@
 				C14B32081DB5F9E9006BC62D /* SerialGATT.m */,
 				C14B32041DB5F9DB006BC62D /* XYSerialManage.h */,
 				C14B32051DB5F9DB006BC62D /* XYSerialManage.m */,
+				C18EA6671E11F8E7001CB741 /* XYMotionManager.h */,
+				C18EA6681E11F8E7001CB741 /* XYMotionManager.m */,
 			);
 			name = SerialManager;
 			sourceTree = "<group>";
@@ -141,6 +156,7 @@
 				C173E91E1DB45DF800AA413B /* ALSHandle_swiftTests */,
 				C173E9291DB45DF800AA413B /* ALSHandle_swiftUITests */,
 				C173E9081DB45DF700AA413B /* Products */,
+				C19C26821E53F121004D0CF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +175,7 @@
 			children = (
 				C14B32101DB5FB48006BC62D /* SerialManager */,
 				C173E90A1DB45DF800AA413B /* AppDelegate.swift */,
+				C19D93A21E1B886500E76508 /* processImage.swift */,
 				C174D8761DC837F50086BD96 /* LoadingViewController.swift */,
 				C173E90C1DB45DF800AA413B /* ViewController.swift */,
 				C17A237B1DBD99820055ADBC /* ConnectViewController.swift */,
@@ -191,6 +208,14 @@
 				C173E92C1DB45DF800AA413B /* Info.plist */,
 			);
 			path = ALSHandle_swiftUITests;
+			sourceTree = "<group>";
+		};
+		C19C26821E53F121004D0CF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C19C26831E53F121004D0CF8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +287,7 @@
 					C173E9061DB45DF700AA413B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7QBZV3YGDE;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					C173E91A1DB45DF800AA413B = {
 						CreatedOnToolsVersion = 8.0;
@@ -335,6 +360,7 @@
 				C1765A071DB8AC4900D343E2 /* SteeringWheel.m in Sources */,
 				C14B32061DB5F9DB006BC62D /* XYSerialManage.m in Sources */,
 				C17A23801DBDF0030055ADBC /* SetingViewController.swift in Sources */,
+				C18EA6691E11F8E7001CB741 /* XYMotionManager.m in Sources */,
 				C173E90D1DB45DF800AA413B /* ViewController.swift in Sources */,
 				C17A237E1DBDBBEB0055ADBC /* AlertView.swift in Sources */,
 				C1A0BD5E1DC6EDCC001581FF /* UIImage+data.m in Sources */,
@@ -346,6 +372,8 @@
 				C14B320F1DB5FB44006BC62D /* NSString+FindString.m in Sources */,
 				C1765A0A1DB8AD0400D343E2 /* XYDirectionCalculate.c in Sources */,
 				C127DB711DB8C5C7000FB0B6 /* CUSFlashLabel.m in Sources */,
+				C19C268D1E5460BC004D0CF8 /* PhysicsAnimationView.m in Sources */,
+				C19D93A31E1B886600E76508 /* processImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,15 +526,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				INFOPLIST_FILE = ALSHandle_swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alsrobort.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ae05c4c2-76cc-46b2-a0f0-4744e946f2ee";
-				PROVISIONING_PROFILE_SPECIFIER = ALSHandlePorfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ALSHandle_swift/Building-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -518,15 +546,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Alseon Robotics Technology Co.,Ltd. (7QBZV3YGDE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7QBZV3YGDE;
 				INFOPLIST_FILE = ALSHandle_swift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alsrobort.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ae05c4c2-76cc-46b2-a0f0-4744e946f2ee";
-				PROVISIONING_PROFILE_SPECIFIER = ALSHandlePorfile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ALSHandle_swift/Building-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

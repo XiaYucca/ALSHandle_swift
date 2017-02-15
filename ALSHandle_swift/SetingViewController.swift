@@ -34,7 +34,7 @@ enum OptionTag:Int {
 //MARK: 模型层
 struct OptionData {
     
-    var up = "up";
+    var up = "";
     var upRight = ""
     var right = ""
     var downRight = ""
@@ -102,7 +102,7 @@ struct OptionData {
         
         switch t {
         case .up:
-            print("UP !!!")
+            print("UP !!!");
            return self.up ;
         case .upRight:
            return  self.upRight ;
@@ -213,6 +213,8 @@ func optionFromDocument() -> OptionData {
         optionData = OptionData()
     }
     var optionClass = unarchive()as? OptionDataClass;
+    
+    print("-----------------------\(optionClass?.up)")
     
     if(optionClass == nil){
         optionClass = OptionDataClass();
@@ -348,6 +350,9 @@ class SetingViewController: UIViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        optionData = optionFromDocument()
+        
+        self.tempOptionData = optionData;
         
          print("seting view didappear optiondata\(optionData)")
          if(self.tempOptionData == nil){
@@ -374,6 +379,8 @@ class SetingViewController: UIViewController,UITextFieldDelegate {
         
         self.tailLabel.startAnimating();
         self.tipsLabel.startAnimating();
+        
+        self.loadOptionData(data: selectOpentionType);
         
     }
 
@@ -411,8 +418,80 @@ class SetingViewController: UIViewController,UITextFieldDelegate {
     @IBAction func saveBtn_click(_ sender: AnyObject) {
         
         optionData = self.tempOptionData!;
-        print("write to file \(optionWriteToFile())")
+        if optionWriteToFile() {
+            
+            let acv = UIAlertAction.init(title: "好的", style: UIAlertActionStyle.default , handler: { (actoin) in
+            })
+            let acvc = UIAlertController.init(title: "保存成功", message:nil, preferredStyle: UIAlertControllerStyle.alert)
+            acvc.addAction(acv);
+            self.present(acvc, animated: true, completion: {
+                
+                DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now()+2.0), execute: {
+                    acvc.dismiss(animated: true, completion: nil);
+                })
+            });
+    
+        }
     }
+    
+    @IBAction func optionBtnclick(sender: UIButton){
+        
+        print( "send++ ",sender.tag);
+        
+        let bt0 = self.view.viewWithTag(2000) as! UIButton!
+        let bt1 = self.view.viewWithTag(2001) as! UIButton!
+
+        let bt2 = self.view.viewWithTag(2002) as! UIButton!
+
+        
+        if sender.tag == 2000 {
+            selectOpentionType = opentionType.touch
+            bt0?.isSelected = true;
+            bt1?.isSelected = false;
+            bt2?.isSelected = false;
+        
+        }else if sender.tag == 2001{
+            selectOpentionType = opentionType.gravity
+            bt0?.isSelected = false;
+            bt1?.isSelected = true;
+            bt2?.isSelected = false;
+        }else{
+            selectOpentionType = opentionType.voice
+            bt0?.isSelected = false;
+            bt1?.isSelected = false;
+            bt2?.isSelected = true;
+            
+        }
+        }
+    
+    
+    func loadOptionData(data:opentionType) {
+        
+        let bt0 = self.view.viewWithTag(2000) as! UIButton!
+        let bt1 = self.view.viewWithTag(2001) as! UIButton!
+        let bt2 = self.view.viewWithTag(2002) as! UIButton!
+        
+        
+        if(data == opentionType.gravity){
+            bt0?.isSelected = false;
+            bt1?.isSelected = true;
+            bt2?.isSelected = false;
+        }else if data == opentionType.voice{
+            bt0?.isSelected = false;
+            bt1?.isSelected = false;
+            bt2?.isSelected = true;
+            
+        }else{
+            bt0?.isSelected = true;
+            bt1?.isSelected = false;
+            bt2?.isSelected = false;
+        }
+        
+    }
+
+    
+    
+    
     
  
 
@@ -457,6 +536,17 @@ class AboutViewController: UIViewController {
         }
     }
 }
+
+
+//func motionTest() {
+//    motion?.accelerometerUpdateInterval(0.5, callBack: { (acceleration, error) in
+//        print(acceleration)
+//      //  print(error!);
+//    })
+//}
+
+
+
 
 /*(function(){var ver="1.0.1";
     try{ver=opener.QC.getVersion();}
