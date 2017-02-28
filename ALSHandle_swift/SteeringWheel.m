@@ -8,7 +8,7 @@
 
 #import "SteeringWheel.h"
 //#import "UIButton+BJMusic.h"
-#import"XYDirectionCalculate.h"
+
 //#import "UIPanGestureRecognizer.h"
 
 
@@ -97,7 +97,7 @@
         case UIGestureRecognizerStateEnded:
             NSLog(@"结束拖拽");
             
-             !self.didDrag ?: self.didDrag(0);
+            !self.didDrag ?: self.didDrag(0);
             self.derictionBtn.transform = CGAffineTransformIdentity ;
 
             [sender setTranslation:CGPointZero inView:sender.view];

@@ -75,6 +75,7 @@
 {
     self.misConnectCallback = callback;
 }
+
 -(void)finedPeripheral:(void (^)(CBPeripheral *, NSNumber *))callBack
 {
     self.findedPeripheralcallBack = callBack;

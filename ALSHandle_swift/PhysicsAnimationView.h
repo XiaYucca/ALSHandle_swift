@@ -8,6 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhysicsAnimationView : UIImageView
+#import "XYDirectionCalculate.h"
+
+#define DRANGBTNWIDTH 60
+
+@protocol PhysicsAnimationViewProtocol <NSObject>
+
+@optional
+
+-(void)sendStr:(NSString *)str;
+
+@end
+
+
+@interface PhysicsAnimationView : UIView
+
+@property(nonatomic,assign) CGFloat lineWidth;
+@property(nonatomic,weak) UIColor *lineColor;
+@property(nonatomic,strong) UIImage *itemImage;
+@property(nonatomic,strong) UIImage *backImage;
+
+-(void)didDidDrag:(void(^)(DERICTION der))didDrag;
 
 @end

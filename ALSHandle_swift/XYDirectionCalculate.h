@@ -26,6 +26,19 @@ typedef enum{
     leftDown,//8
 }deriction;
 
+
+typedef enum {
+    WHEEL_ORIGOIN = 0,
+    WHEEL_LEFT,
+    WHEEL_LEFT_UP,
+    WHEEL_UP,
+    WHEEL_RIGHT_UP,
+    WHEEL_RIGHT,
+    WHEEL_RIGHT_DOWN,
+    WHEEL_DOWN,
+    WHEEL_LEFT_DOWN,
+}DERICTION ;
+
 CGPoint getLocationWithTranslation(CGPoint center, CGPoint translation, CGFloat minRadius, CGFloat maxRadius);
 deriction getDeriction(CGFloat angle);
 

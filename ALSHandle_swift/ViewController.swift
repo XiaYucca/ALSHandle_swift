@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 //let serialManager :XYSerialManage? = nil;
 
 enum opentionType {
@@ -32,9 +33,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var AnimateBg: UIImageView!
     @IBOutlet weak var btn_d: UIButton!
-    @IBOutlet weak var wheelV: SteeringWheel!
+    @IBOutlet weak var wheelV: UIView!
     //let sm = XYSerialManage();
     @IBOutlet weak var blueTouchStuts: UIButton!
+    
+    var wheel: SteeringWheel?
+    var gravity: PhysicsAnimationView?
+    
+    var messageTimeout:Timer?
+    
     
     func btnClick(btn:UIButton) {
         switch btn.tag {
@@ -99,20 +106,49 @@ class ViewController: UIViewController {
             });
          })
         
+        weak var weakSelf: ViewController! = self;
+
+        serialManager.peripheralValueChangle { (p , data) in
+            let message = String.init(data: data!, encoding: String.Encoding.utf8)! as String
+            
+            weakSelf.loadMessage(message: message, 6);
+            
+        }
+        
         self.rotationAnimation(view: AnimateBg)
+//        self.loadWheel()
+//        self.loadGravity()
+     }
+    
+    func loadMessage(message:String,_ timeOut:Float) {
         
-        self.wheelV.bgImage = UIImage(named:"yaogan_bac");
+        self.messageTimeout?.invalidate();
+        self.messageTimeout = nil;
         
-//        self.wheelV.btnImage = UIImage(named:"drogBtn");
-//        
-        self.wheelV.btnDrgImage = UIImage(named:"drogBtn");
+        weak var label = self.view.viewWithTag(3000) as! UILabel;
+        label?.text = message;
         
-        self.wheelV.didDidDrag { (drag) in
-            print(drag.rawValue);
+        let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeOut), repeats: false) { (_ ) in
+            label?.text = ""
+        }
+        self.messageTimeout = timer;
+     }
+    
+    func loadGravity() {
+        self.gravity = PhysicsAnimationView.init(frame: CGRect.init(x: 0, y: 0, width: self.wheelV.frame.size.width, height: self.wheelV.frame.size.height));
+       // self.gravity?.backgroundColor = UIColor.blue
+     //   self.gravity?.image = UIImage(named:"yaogan_bac");
+        self.gravity?.backgroundColor = UIColor.clear
+        self.gravity?.backImage = UIImage(named:"dragBack");
+        self.gravity?.itemImage = UIImage(named:"drogBtn");
+        self.gravity?.lineWidth = 0;
+        
+        self.wheelV.addSubview(self.gravity!);
+        
+        self.gravity?.didDidDrag({ (drag) in
             switch drag.rawValue{
             case 0:
-               // print("org")
-                
+                // print("org")
                 serialManager.write(optionData!.oriValue.data(using: String.Encoding.utf8));
                 break;
                 
@@ -145,13 +181,89 @@ class ViewController: UIViewController {
             default :
                 print("")
             }
-        }
+        })
 
+        
+    }
+    
+    
+    func loadWheel() {
+        self.wheel = SteeringWheel.init(frame: CGRect.init(x: 0, y: 0, width: self.wheelV.frame.size.width, height: self.wheelV.frame.size.height));
+        
+        self.wheel?.backgroundColor = UIColor.clear
+        
+        self.wheelV.addSubview(self.wheel!);
+        
+        self.wheel?.bgImage = UIImage(named:"yaogan_bac");
+        
+        //        self.wheelV.btnImage = UIImage(named:"drogBtn");
+        //
+        self.wheel?.btnDrgImage = UIImage(named:"drogBtn");
+        
+        weak var weakSelf: ViewController! = self;
+        
+        self.wheel?.didDidDrag { (drag) in
+            print(drag.rawValue);
+            switch drag.rawValue{
+            case 0:
+                // print("org")
+                
+                serialManager.write(optionData!.oriValue.data(using: String.Encoding.utf8));
+                break;
+                
+            case 1:
+                serialManager.write(optionData!.up.data(using: String.Encoding.utf8));
+                break;
+            case 2:
+                serialManager.write(optionData!.upRight.data(using: String.Encoding.utf8));
+                break;
+            case 3:
+                serialManager.write(optionData!.right.data(using: String.Encoding.utf8));
+                break;
+            case 4:
+                serialManager.write(optionData!.downRight.data(using: String.Encoding.utf8));
+                break;
+            case 5:
+                serialManager.write(optionData!.down.data(using: String.Encoding.utf8));
+                break;
+            case 6:
+                serialManager.write(optionData!.downLeft.data(using: String.Encoding.utf8));
+                break;
+            case 7:
+                serialManager.write(optionData!.left.data(using: String.Encoding.utf8));
+                break;
+            case 8:
+                serialManager.write(optionData!.upLeft.data(using: String.Encoding.utf8));
+                weakSelf.loadMessage(message: "测试数据"+String(arc4random()) , 2)
+                break;
+                
+                
+            default :
+                print("")
+            }
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        super.viewWillDisappear(animated)
+        
+        self.wheel?.removeFromSuperview()
+        self.gravity?.removeFromSuperview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear( animated)
         
+        
+        if(selectOpentionType == opentionType.touch){
+            self.loadWheel()
+
+        }
+        else if(selectOpentionType == opentionType.gravity){
+             self.loadGravity()
+        }
+        
+
         print("isblueTooth\(isBlueToothConnect)");
         
         if (isBlueToothConnect){
@@ -179,8 +291,10 @@ class ViewController: UIViewController {
         anim.isCumulative = true;
         anim.isRemovedOnCompletion = false;
         
-        view.layer.anchorPoint = CGPoint.init(x: 0.4, y: 0.6)
+//         view.layer.anchorPoint = CGPoint.init(x: 0.4, y: 0.6)
         
+//        view.layer.transform = CATransform3DMakeRotation(<#T##angle: CGFloat##CGFloat#>, <#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)
+//        view.layer.anchorPointZ
         
         view.layer.add(anim, forKey: nil);
     }

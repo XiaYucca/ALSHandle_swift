@@ -16,6 +16,7 @@
 
 #import "UIImage+data.h"
 #import "XYMotionManager.h"
+#import "PhysicsAnimationView.h"
 
 #endif /* Building_Header_h */
 

@@ -7,18 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import"XYDirectionCalculate.h"
 
-typedef enum {
-    WHEEL_ORIGOIN = 0,
-    WHEEL_LEFT,
-    WHEEL_LEFT_UP,
-    WHEEL_UP,
-    WHEEL_RIGHT_UP,
-    WHEEL_RIGHT,
-    WHEEL_RIGHT_DOWN,
-    WHEEL_DOWN,
-    WHEEL_LEFT_DOWN,
-}DERICTION ;
+//typedef enum {
+//    WHEEL_ORIGOIN = 0,
+//    WHEEL_LEFT,
+//    WHEEL_LEFT_UP,
+//    WHEEL_UP,
+//    WHEEL_RIGHT_UP,
+//    WHEEL_RIGHT,
+//    WHEEL_RIGHT_DOWN,
+//    WHEEL_DOWN,
+//    WHEEL_LEFT_DOWN,
+//}DERICTION ;
 
 
 #define DRBTN_NOMAL_R 50
