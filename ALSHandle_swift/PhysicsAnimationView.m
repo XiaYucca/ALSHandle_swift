@@ -110,7 +110,7 @@
  }
  */
 -(CGFloat )lineWidth{
-    if (_lineWidth == 0) {
+    if (!_lineWidth ) {
         _lineWidth = 5.0;
     }
     return  _lineWidth;
@@ -184,6 +184,16 @@
      }];
     
     return [super initWithFrame:frame];
+}
+
+-(void)stopAccelerometerUpdates{
+    XYMotionManager *motionM = [XYMotionManager shareMotionManager];
+    [motionM stopAccelerometerUpdates];
+}
+-(void)startAccelerometerUpdates{
+    
+    XYMotionManager *motionM = [XYMotionManager shareMotionManager];
+    [motionM startAccelerometerUpdates];
 }
 
 -(void)drawRect:(CGRect)rect{

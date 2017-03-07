@@ -30,4 +30,7 @@
 
 -(void)didDidDrag:(void(^)(DERICTION der))didDrag;
 
+-(void)stopAccelerometerUpdates;
+-(void)startAccelerometerUpdates;
+
 @end

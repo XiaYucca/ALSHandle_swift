@@ -23,5 +23,7 @@ typedef struct{
 
 -(void)accelerometerUpdateInterval:(CGFloat)updateInterval NSOperationQueue:(NSOperationQueue *)queue CallBack:(void(^)(XYacceleration acceleration, NSError *error))callBack;
 
+-(void)stopAccelerometerUpdates;
+-(void)startAccelerometerUpdates;
 
 @end

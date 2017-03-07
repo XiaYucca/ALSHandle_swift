@@ -41,6 +41,8 @@ class ViewController: UIViewController {
     var gravity: PhysicsAnimationView?
     
     var messageTimeout:Timer?
+
+    let voiceController :VoicesViewController = VoicesViewController.init();
     
     
     func btnClick(btn:UIButton) {
@@ -65,6 +67,15 @@ class ViewController: UIViewController {
         }
     }
     
+    func voiceClick() {
+        self.voiceController.startRecognitionWithoutUI();
+        
+    }
+    func voiceEnd() {
+        self.voiceController.speakEnd();
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,9 +96,12 @@ class ViewController: UIViewController {
             btn.addTarget(self, action: #selector(self.btnClick(btn:)), for: UIControlEvents.touchUpInside);
         }
         
+        let btn = self.view.viewWithTag(998)as! UIButton;
+        btn.addTarget(self, action: #selector(self.voiceClick), for: UIControlEvents.touchDown);
+        btn.addTarget(self, action: #selector(self.voiceEnd), for: UIControlEvents.touchUpInside);
+
         
         serialManager = XYSerialManage.init();
-        
         
         serialManager?.misConnect({ (p) in
             print("misconnect");
@@ -106,12 +120,13 @@ class ViewController: UIViewController {
             });
          })
         
+        
         weak var weakSelf: ViewController! = self;
 
         serialManager.peripheralValueChangle { (p , data) in
             let message = String.init(data: data!, encoding: String.Encoding.utf8)! as String
             
-            weakSelf.loadMessage(message: message, 6);
+            weakSelf.loadMessage(message: message, 7);
             
         }
         
@@ -125,16 +140,30 @@ class ViewController: UIViewController {
         self.messageTimeout?.invalidate();
         self.messageTimeout = nil;
         
-        weak var label = self.view.viewWithTag(3000) as! UILabel;
+        weak var label = (self.view.viewWithTag(3000) as! UILabel);
         label?.text = message;
         
         let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeOut), repeats: false) { (_ ) in
             label?.text = ""
         }
         self.messageTimeout = timer;
+        
+
+        
      }
     
+    func loadVoice() {
+        
+        let btnV = self.view.viewWithTag(998);
+        btnV?.isHidden = false;
+        
+    }
+    
     func loadGravity() {
+        
+        let btnV = self.view.viewWithTag(998);
+        btnV?.isHidden = true;
+        
         self.gravity = PhysicsAnimationView.init(frame: CGRect.init(x: 0, y: 0, width: self.wheelV.frame.size.width, height: self.wheelV.frame.size.height));
        // self.gravity?.backgroundColor = UIColor.blue
      //   self.gravity?.image = UIImage(named:"yaogan_bac");
@@ -142,6 +171,8 @@ class ViewController: UIViewController {
         self.gravity?.backImage = UIImage(named:"dragBack");
         self.gravity?.itemImage = UIImage(named:"drogBtn");
         self.gravity?.lineWidth = 0;
+        
+     //   self.gravity?.startAccelerometerUpdates();
         
         self.wheelV.addSubview(self.gravity!);
         
@@ -153,6 +184,78 @@ class ViewController: UIViewController {
                 break;
                 
             case 1:
+                serialManager.write(optionData!.left.data(using: String.Encoding.utf8));
+                break;
+            case 2:
+                serialManager.write(optionData!.upLeft.data(using: String.Encoding.utf8));
+                break;
+            case 3:
+                
+                serialManager.write(optionData!.up.data(using: String.Encoding.utf8));
+                break;
+            case 4:
+                serialManager.write(optionData!.upRight.data(using: String.Encoding.utf8));
+                break;
+            case 5:
+                serialManager.write(optionData!.right.data(using: String.Encoding.utf8));
+                break;
+            case 6:
+                serialManager.write(optionData!.downRight.data(using: String.Encoding.utf8));
+                break;
+            case 7:
+                serialManager.write(optionData!.down.data(using: String.Encoding.utf8));
+                break;
+            case 8:
+                serialManager.write(optionData!.downLeft.data(using: String.Encoding.utf8));
+                break;
+                
+                
+            default :
+                print("")
+            }
+            
+            print(drag.rawValue)
+        })
+
+        
+    }
+    
+    
+    func loadWheel() {
+        
+        let btnV = self.view.viewWithTag(998);
+        btnV?.isHidden = true;
+        
+        self.gravity?.stopAccelerometerUpdates();
+        
+        self.wheel = SteeringWheel.init(frame: CGRect.init(x: 0, y: 0, width: self.wheelV.frame.size.width, height: self.wheelV.frame.size.height));
+        
+        self.wheel?.backgroundColor = UIColor.clear
+        
+        self.wheelV.addSubview(self.wheel!);
+        
+        self.wheel?.bgImage = UIImage(named:"yaogan_bac");
+        
+        //        self.wheelV.btnImage = UIImage(named:"drogBtn");
+        //
+        self.wheel?.btnDrgImage = UIImage(named:"drogBtn");
+        
+        weak var weakSelf: ViewController! = self;
+        
+        weakSelf.voiceController.endRecongnition { (reponse) in
+            
+            weakSelf.loadMessage(message: reponse!, 4);
+        }
+        
+        weakSelf.voiceController.endRecongnition(instraction: { (der) in
+            switch der.rawValue{
+            case 0:
+                // print("org")
+                print("原地");
+                serialManager.write(optionData!.oriValue.data(using: String.Encoding.utf8));
+                break;
+            case 1:
+                print("左");
                 serialManager.write(optionData!.up.data(using: String.Encoding.utf8));
                 break;
             case 2:
@@ -174,33 +277,19 @@ class ViewController: UIViewController {
                 serialManager.write(optionData!.left.data(using: String.Encoding.utf8));
                 break;
             case 8:
+                
                 serialManager.write(optionData!.upLeft.data(using: String.Encoding.utf8));
+              //  weakSelf.loadMessage(message: "测试数据"+String(arc4random()) , 2)
+                
                 break;
                 
                 
             default :
                 print("")
             }
-        })
-
-        
-    }
-    
-    
-    func loadWheel() {
-        self.wheel = SteeringWheel.init(frame: CGRect.init(x: 0, y: 0, width: self.wheelV.frame.size.width, height: self.wheelV.frame.size.height));
-        
-        self.wheel?.backgroundColor = UIColor.clear
-        
-        self.wheelV.addSubview(self.wheel!);
-        
-        self.wheel?.bgImage = UIImage(named:"yaogan_bac");
-        
-        //        self.wheelV.btnImage = UIImage(named:"drogBtn");
-        //
-        self.wheel?.btnDrgImage = UIImage(named:"drogBtn");
-        
-        weak var weakSelf: ViewController! = self;
+            print(der.rawValue)
+            
+        });
         
         self.wheel?.didDidDrag { (drag) in
             print(drag.rawValue);
@@ -233,14 +322,16 @@ class ViewController: UIViewController {
                 serialManager.write(optionData!.left.data(using: String.Encoding.utf8));
                 break;
             case 8:
+                
                 serialManager.write(optionData!.upLeft.data(using: String.Encoding.utf8));
-                weakSelf.loadMessage(message: "测试数据"+String(arc4random()) , 2)
+   
                 break;
-                
-                
             default :
-                print("")
+                
+                break;
             }
+            print( drag.rawValue)
+
         }
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -253,17 +344,18 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear( animated)
-        
-        
         if(selectOpentionType == opentionType.touch){
             self.loadWheel()
 
         }
         else if(selectOpentionType == opentionType.gravity){
-             self.loadGravity()
+             self.loadGravity();
         }
-        
+        else{
+            self.loadWheel()
+            self.loadVoice()
 
+        }
         print("isblueTooth\(isBlueToothConnect)");
         
         if (isBlueToothConnect){
@@ -271,10 +363,7 @@ class ViewController: UIViewController {
         }else{
             self.blueTouchStuts.isSelected = false;
         }
-        
-        
-
-    //    var p =  processImage(filePath: "/Users/rainpoll/Desktop/小奥appUI")
+  //    var p =  processImage(filePath: "/Users/rainpoll/Desktop/小奥appUI")
     }
 
     override func didReceiveMemoryWarning() {
@@ -291,11 +380,9 @@ class ViewController: UIViewController {
         anim.isCumulative = true;
         anim.isRemovedOnCompletion = false;
         
-//         view.layer.anchorPoint = CGPoint.init(x: 0.4, y: 0.6)
-        
-//        view.layer.transform = CATransform3DMakeRotation(<#T##angle: CGFloat##CGFloat#>, <#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)
-//        view.layer.anchorPointZ
-        
+//      view.layer.anchorPoint = CGPoint.init(x: 0.4, y: 0.6)
+//      view.layer.transform = CATransform3DMakeRotation(<#T##angle: CGFloat##CGFloat#>, <#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##z: CGFloat##CGFloat#>)
+//      view.layer.anchorPointZ
         view.layer.add(anim, forKey: nil);
     }
     
